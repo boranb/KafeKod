@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Siparis.cs" />
+    <Compile Include="SiparisDetay.cs" />
+    <Compile Include="Urun.cs" />
     <Compile Include="KafeVeri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
