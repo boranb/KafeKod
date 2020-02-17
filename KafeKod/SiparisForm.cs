@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace KafeKod
 {
-    public partial class Form1 : Form
+    public partial class SiparisForm : Form
     {
-        public Form1()
+        public SiparisForm()
         {
             InitializeComponent();
         }
-
     }
 }
