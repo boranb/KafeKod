@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtUrunAd = new System.Windows.Forms.TextBox();
+            this.nudBirimFiyat = new System.Windows.Forms.NumericUpDown();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.dgvUrunşer = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBirimFiyat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrunşer)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,39 +58,42 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Birim Fiyatı ₺";
             // 
-            // textBox1
+            // txtUrunAd
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtUrunAd.Location = new System.Drawing.Point(12, 46);
+            this.txtUrunAd.Name = "txtUrunAd";
+            this.txtUrunAd.Size = new System.Drawing.Size(205, 20);
+            this.txtUrunAd.TabIndex = 2;
             // 
-            // numericUpDown1
+            // nudBirimFiyat
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.numericUpDown1.Location = new System.Drawing.Point(253, 45);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 3;
+            this.nudBirimFiyat.DecimalPlaces = 2;
+            this.nudBirimFiyat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.nudBirimFiyat.Location = new System.Drawing.Point(253, 45);
+            this.nudBirimFiyat.Name = "nudBirimFiyat";
+            this.nudBirimFiyat.Size = new System.Drawing.Size(120, 22);
+            this.nudBirimFiyat.TabIndex = 3;
             // 
-            // button1
+            // btnEkle
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(398, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEkle.Location = new System.Drawing.Point(398, 45);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 4;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvUrunşer
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(461, 404);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvUrunşer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUrunşer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUrunşer.Location = new System.Drawing.Point(12, 88);
+            this.dgvUrunşer.Name = "dgvUrunşer";
+            this.dgvUrunşer.Size = new System.Drawing.Size(461, 404);
+            this.dgvUrunşer.TabIndex = 5;
             // 
             // UrunlerForm
             // 
@@ -98,16 +101,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(490, 509);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgvUrunşer);
+            this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.nudBirimFiyat);
+            this.Controls.Add(this.txtUrunAd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(506, 548);
             this.Name = "UrunlerForm";
             this.Text = "UrunlerForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBirimFiyat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrunşer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,9 +121,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtUrunAd;
+        private System.Windows.Forms.NumericUpDown nudBirimFiyat;
+        private System.Windows.Forms.Button btnEkle;
+        private System.Windows.Forms.DataGridView dgvUrunşer;
     }
 }
