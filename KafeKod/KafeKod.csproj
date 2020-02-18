@@ -117,5 +117,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KafeKod.Data\KafeKod.Data.csproj">
+      <Project>{85BDD121-39A1-423A-AC84-584ECB948786}</Project>
+      <Name>KafeKod.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
