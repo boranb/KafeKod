@@ -60,7 +60,7 @@ namespace KafeKod
                 Adet = (int)nudAdet.Value
             };
             blSiparisDetaylar.Add(sd);
-            cboUrun.SelectedItem = null;
+            cboUrun.SelectedIndex = 0; // 0'ıncı index seçili gelmesi için boş gelmesi için // SelectedItem = null;
             nudAdet.Value = 1;
             TutarGuncelle();
         }
@@ -101,6 +101,20 @@ namespace KafeKod
         private void btnMasaTasi_Click(object sender, EventArgs e)
         {
              
+        }
+
+        private void dgvSiparisDetaylari_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int rowIndex = dgvSiparisDetaylari.HitTest(e.X, e.Y).RowIndex;
+                if (rowIndex > -1)
+                {
+                dgvSiparisDetaylari.ClearSelection();
+                dgvSiparisDetaylari.Rows[rowIndex].Selected = true;
+                cmsSiparisDetayClick.Show(MousePosition);
+                }
+            }
         }
     }
 }

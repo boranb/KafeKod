@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +44,11 @@
             this.btnAnaSayfa = new System.Windows.Forms.Button();
             this.lblMasaNo = new System.Windows.Forms.Label();
             this.lblOdemeTutari = new System.Windows.Forms.Label();
+            this.cmsSiparisDetayClick = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiSiparisDetaySil = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylari)).BeginInit();
+            this.cmsSiparisDetayClick.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -155,6 +159,7 @@
             this.dgvSiparisDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(394, 359);
             this.dgvSiparisDetaylari.TabIndex = 8;
+            this.dgvSiparisDetaylari.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvSiparisDetaylari_MouseClick);
             // 
             // label4
             // 
@@ -242,6 +247,19 @@
             this.lblOdemeTutari.TabIndex = 14;
             this.lblOdemeTutari.Text = "0,00 ₺";
             // 
+            // cmsSiparisDetayClick
+            // 
+            this.cmsSiparisDetayClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSiparisDetaySil});
+            this.cmsSiparisDetayClick.Name = "cmsSiparisDetayClick";
+            this.cmsSiparisDetayClick.Size = new System.Drawing.Size(181, 48);
+            // 
+            // tsmiSiparisDetaySil
+            // 
+            this.tsmiSiparisDetaySil.Name = "tsmiSiparisDetaySil";
+            this.tsmiSiparisDetaySil.Size = new System.Drawing.Size(180, 22);
+            this.tsmiSiparisDetaySil.Text = "Sil";
+            // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +286,7 @@
             this.Text = "SiparisForm";
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylari)).EndInit();
+            this.cmsSiparisDetayClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +309,7 @@
         private System.Windows.Forms.Button btnAnaSayfa;
         private System.Windows.Forms.Label lblMasaNo;
         private System.Windows.Forms.Label lblOdemeTutari;
+        private System.Windows.Forms.ContextMenuStrip cmsSiparisDetayClick;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSiparisDetaySil;
     }
 }
