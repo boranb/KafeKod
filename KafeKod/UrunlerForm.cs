@@ -19,6 +19,7 @@ namespace KafeKod
         {
             db = kafeVeri;
             InitializeComponent();
+            dgvUrunler.AutoGenerateColumns = false;
             blUrunler = new BindingList<Urun>(db.Urunler);
             dgvUrunler.DataSource = blUrunler;
         }
