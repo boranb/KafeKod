@@ -90,6 +90,7 @@
             this.cboUrun.Location = new System.Drawing.Point(15, 43);
             this.cboUrun.Name = "cboUrun";
             this.cboUrun.Size = new System.Drawing.Size(155, 21);
+            this.cboUrun.Sorted = true;
             this.cboUrun.TabIndex = 3;
             // 
             // nudAdet
@@ -252,13 +253,14 @@
             this.cmsSiparisDetayClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiSiparisDetaySil});
             this.cmsSiparisDetayClick.Name = "cmsSiparisDetayClick";
-            this.cmsSiparisDetayClick.Size = new System.Drawing.Size(181, 48);
+            this.cmsSiparisDetayClick.Size = new System.Drawing.Size(87, 26);
             // 
             // tsmiSiparisDetaySil
             // 
             this.tsmiSiparisDetaySil.Name = "tsmiSiparisDetaySil";
             this.tsmiSiparisDetaySil.Size = new System.Drawing.Size(180, 22);
             this.tsmiSiparisDetaySil.Text = "Sil";
+            this.tsmiSiparisDetaySil.Click += new System.EventHandler(this.tsmiSiparisDetaySil_Click);
             // 
             // SiparisForm
             // 

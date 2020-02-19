@@ -32,6 +32,7 @@ namespace KafeKod
                 new Urun(){UrunAd = "Kola", BirimFiyat = 6.99m},
                 new Urun(){UrunAd = "Çay", BirimFiyat = 9.99m}
             };
+            db.Urunler.Sort();
         }
 
         private void MasalariOlustur()
@@ -110,6 +111,12 @@ namespace KafeKod
         private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
         {
             var frm = new GecmisSiparislerForm(db);
+            frm.ShowDialog();
+        }
+
+        private void tsmiUrunler_Click(object sender, EventArgs e)
+        {
+            var frm = new UrunlerForm(db);
             frm.ShowDialog();
         }
     }

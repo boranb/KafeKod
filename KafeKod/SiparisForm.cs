@@ -26,7 +26,7 @@ namespace KafeKod
             InitializeComponent();
             MasaNoGuncelle();
             TutarGuncelle();
-            cboUrun.DataSource = db.Urunler;
+            cboUrun.DataSource = db.Urunler; //.OrderBy(x=>x.UrunAd).ToList();
             //cboUrun.SelectedItem = null; açılışta ürün seçili gelmesi için boş bıraktık;
             dgvSiparisDetaylari.DataSource = blSiparisDetaylar;
         }
@@ -115,6 +115,17 @@ namespace KafeKod
                 cmsSiparisDetayClick.Show(MousePosition);
                 }
             }
+        }
+
+        private void tsmiSiparisDetaySil_Click(object sender, EventArgs e)
+        {
+            if (dgvSiparisDetaylari.SelectedRows.Count > 0)
+            {
+                var seciliSatir = dgvSiparisDetaylari.SelectedRows[0];
+                var sipDetay = (SiparisDetay) seciliSatir.DataBoundItem;
+                blSiparisDetaylar.Remove(sipDetay);
+            }
+            TutarGuncelle();
         }
     }
 }
