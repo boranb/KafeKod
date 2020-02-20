@@ -110,7 +110,7 @@ namespace KafeKod
 
                 // sipariş formun oluşma ani
                 SiparisForm frmSiparis = new SiparisForm(db,sip);
-                frmSiparis.MasaTasindi += FrmSiparis_MasaTasindi;
+                frmSiparis.MasaTasiniyor += FrmSiparis_MasaTasindi;
                 frmSiparis.ShowDialog();
 
 
@@ -128,32 +128,19 @@ namespace KafeKod
         {
             // adım 1: eski masayı boşalt
 
-            ListViewItem lviEskiMasa = null;
-            foreach (ListViewItem item in lvwMasalar.Items)
-            {
-                if (item.Tag == e.TasinanSiparis)
-                {
-                    lviEskiMasa = item;
-                    break;
-                }
-            }
+            ListViewItem lviEskiMasa = MasaBul(e.EskiMasaNo);
 
             lviEskiMasa.Tag = e.EskiMasaNo;
             lviEskiMasa.ImageKey = "bos";
+
             // adım 2: yeni masaya siparişi koy
+
+            ListViewItem lviYeniMasa = MasaBul(e.YeniMasaNo);
+
+            lviYeniMasa.Tag = e.TasinanSiparis;
+            lviYeniMasa.ImageKey = "dolu";
         }
 
-        public void MasaTasi(int kaynak, int hedef)
-        {
-            foreach (ListViewItem masa in lvwMasalar.Items)
-            {
-                if ((int)masa.Tag == kaynak)
-                    masa.ImageKey = "bos";
-
-                if ((int)masa.Tag == hedef)
-                    masa.ImageKey = "dolu";
-            }
-        }
 
         private void tsmiGecmisSiparisler_Click(object sender, EventArgs e)
         {
@@ -171,6 +158,22 @@ namespace KafeKod
         {
             string json = JsonConvert.SerializeObject(db);
             File.WriteAllText("veri.json",json);
+        }
+
+        private ListViewItem MasaBul(int masaNo)
+        {
+            foreach (ListViewItem item in lvwMasalar.Items)
+            {
+                if (item.Tag is int && (int)item.Tag == masaNo)
+                {
+                    return item;
+                }
+                else if (item.Tag is Siparis && ((Siparis)item.Tag).MasaNo == masaNo)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
     }
 }
