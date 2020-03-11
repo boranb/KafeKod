@@ -46,6 +46,9 @@
             this.lblOdemeTutari = new System.Windows.Forms.Label();
             this.cmsSiparisDetayClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiSiparisDetaySil = new System.Windows.Forms.ToolStripMenuItem();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylari)).BeginInit();
             this.cmsSiparisDetayClick.SuspendLayout();
@@ -154,6 +157,10 @@
             this.dgvSiparisDetaylari.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylari.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSiparisDetaylari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSiparisDetaylari.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
             this.dgvSiparisDetaylari.Location = new System.Drawing.Point(15, 79);
             this.dgvSiparisDetaylari.Name = "dgvSiparisDetaylari";
             this.dgvSiparisDetaylari.ReadOnly = true;
@@ -258,9 +265,30 @@
             // tsmiSiparisDetaySil
             // 
             this.tsmiSiparisDetaySil.Name = "tsmiSiparisDetaySil";
-            this.tsmiSiparisDetaySil.Size = new System.Drawing.Size(180, 22);
+            this.tsmiSiparisDetaySil.Size = new System.Drawing.Size(86, 22);
             this.tsmiSiparisDetaySil.Text = "Sil";
             this.tsmiSiparisDetaySil.Click += new System.EventHandler(this.tsmiSiparisDetaySil_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "UrunAd";
+            this.Column1.HeaderText = "Ürün Adı";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Adet";
+            this.Column2.HeaderText = "Adet";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "BirimFiyat";
+            this.Column3.HeaderText = "Birim Fiyat";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // SiparisForm
             // 
@@ -313,5 +341,8 @@
         private System.Windows.Forms.Label lblOdemeTutari;
         private System.Windows.Forms.ContextMenuStrip cmsSiparisDetayClick;
         private System.Windows.Forms.ToolStripMenuItem tsmiSiparisDetaySil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
