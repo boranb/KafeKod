@@ -21,7 +21,7 @@ namespace KafeKod.Data
         public int Adet { get; set; }
         public int UrunId { get; set; }    // bağlı olduğu foreign Id
         public int SiparisId { get; set; } // bağlı olduğu foreign Id
-        public virtual Urun Urun { get; set; } // her ürünün bir detayı olur
+        public virtual Urun Urun { get; set; } // her detay bir ürüne ait olur
         public virtual Siparis Siparis { get; set; } // her detay bir siparişe bağlıdır
 
     }

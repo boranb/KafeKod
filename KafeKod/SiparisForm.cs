@@ -28,7 +28,7 @@ namespace KafeKod
             MasaNolariYukle();
             MasaNoGuncelle();
             TutarGuncelle();
-            cboUrun.DataSource = db.Urunler.ToList(); //.OrderBy(x=>x.UrunAd).ToList();
+            cboUrun.DataSource = db.Urunler.Where(x=>!x.StoktaYok).ToList(); //.OrderBy(x=>x.UrunAd).ToList();  // stokta yoksa = true not'ı stokta olanlar
             //cboUrun.SelectedItem = null; açılışta ürün seçili gelmesi için boş bıraktık;
             dgvSiparisDetaylari.DataSource = siparis.SiparisDetaylar;
         }
@@ -140,8 +140,9 @@ namespace KafeKod
             {
                 var seciliSatir = dgvSiparisDetaylari.SelectedRows[0];
                 var sipDetay = (SiparisDetay) seciliSatir.DataBoundItem;
-                siparis.SiparisDetaylar.Remove(sipDetay);
+                db.SiparisDetaylar.Remove(sipDetay);
                 db.SaveChanges();
+                dgvSiparisDetaylari.DataSource =new BindingSource(siparis.SiparisDetaylar,null);
 
             }
             TutarGuncelle();

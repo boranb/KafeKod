@@ -19,7 +19,7 @@ namespace KafeKod
             db = kafeVeri;
             InitializeComponent();
             dgvUrunler.AutoGenerateColumns = false;
-            dgvUrunler.DataSource = db.Urunler.OrderBy(x => x.UrunAd).ToList();
+            dgvUrunler.DataSource = new BindingSource(db.Urunler.OrderBy(x => x.UrunAd).ToList(), null);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace KafeKod
                 BirimFiyat = nudBirimFiyat.Value
             });
             db.SaveChanges();
-            dgvUrunler.DataSource = db.Urunler.OrderBy(x => x.UrunAd).ToList();
+            dgvUrunler.DataSource = new BindingSource(db.Urunler.OrderBy(x => x.UrunAd).ToList(), null);
 
         }
 
@@ -60,9 +60,36 @@ namespace KafeKod
                 else
                 {
                     dgvUrunler.Rows[e.RowIndex].ErrorText = "";
-                    db.SaveChanges();
                 }
             }
+        }
+
+
+        // databound item satırla ilişkili nesneyi saklar
+
+        private void dgvUrunler_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            Urun urun = (Urun)e.Row.DataBoundItem;
+
+            if (urun.SiparisDetaylar.Count > 0)
+            {
+                MessageBox.Show("Bu ürün geçmiş siparişlerle ilişkili olduğu için silinemez");
+                e.Cancel = true;
+                return;
+            }
+
+            db.Urunler.Remove(urun);
+            db.SaveChanges();
+        }
+
+        private void UrunlerForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            txtUrunAd.Focus(); // datagridview'deki son değişikliğin kaydedilmesini tetiklemek için
+        }
+
+        private void dgvUrunler_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            db.SaveChanges();
         }
     }
 }
